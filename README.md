@@ -26,3 +26,12 @@ System:
   npmGlobalPackages:
     *react-native*: Not Found
 ```
+
+# Steps  
+1. Initialize new project with: npx react-native init issue1391  
+2. Added firebase following https://rnfirebase.io/  
+3. Added react-native-push-notification following README  
+    3.1 Changed android color to white on AndroidManifest.xml  
+    3.2 Removed ReactNativePushNotificationPackage from MainAppliation.Java (avoid double package imported)  
+    3.3 Installed and imported @react-native-community/push-notification-ios (avoid PushNotificationIOS undefined)  
+4. Sent notification message trought Firebase Console and it worked. No bug found on initialization. But, Notification Permission wasn't asked on App init.
